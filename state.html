@@ -36,5 +36,32 @@
     <button x-data @click="alert('clicked data lest alpine')">
       Clicked me
     </button> -->
+
+    <!-- reuseable data using Alpine.data  -->
+    <!-- 
+    <div x-data="myToggle(true)">
+      <button @click="toggle" x-text="btnTitle">Expand/Hide</button>
+      <h2 x-show="show" x-transition x-text="content">some content</h2>
+    </div>
+
+    <div x-data="myToggle(false)">
+      <button @click="toggle">Expand two</button>
+      <h2 x-show="show" x-transition>some content</h2>
+    </div> -->
+
+    <script>
+      document.addEventListener("alpine:init", () => {
+        // Alpine.data("myToggle", (show) => {
+        //   return {
+        //     show: show,
+        //     btnTitle: "expand",
+        //     content: "new content",
+        //     toggle() {
+        //       this.show = !this.show;
+        //     },
+        //   };
+        // });
+      });
+    </script>
   </body>
 </html>
