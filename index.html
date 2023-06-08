@@ -14,9 +14,21 @@
   </head>
   <body>
     <h1>Alpine js practice</h1>
-    <div x-data="{title:'hello <b>alpine</b>'}">
+    <!-- <div x-data="{title:'hello <b>alpine</b>',show: true}">
       <p x-text="title"></p>
-      <p x-html="title"></p>
+      <p x-html="title" x-show="show"></p>
+    </div> -->
+    <!-- <div x-data="{title:'hello <b>alpine</b>',show: false}">
+      <button @mouseEnter="show=true" @mouseLeave="show=false">Toggle</button>
+      <p x-html="title" x-show="show" x-transition></p>
+    </div> -->
+    <div
+      x-data="{title:'toggle using  <em>alpine</em>',show: false, toggle(){
+        this.show = !this.show
+    }}"
+    >
+      <button @click="toggle">Toggle</button>
+      <h2 x-html="title" x-show="show"></h2>
     </div>
   </body>
 </html>
