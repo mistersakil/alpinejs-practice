@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine js</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <h1>Alpine State</h1>
+    <!-- Local state -->
+    <!-- <div x-data="{open:true}"></div> -->
+    <!-- Nesting data -->
+    <!-- <div x-data="{show:true}">
+      <div x-data="{label: 'child state'}">
+        <h2 x-show="show">parent data</h2>
+        <h2 x-text="label"></h2>
+      </div>
+    </div> -->
+    <!-- single element data  -->
+
+    <!-- <button x-data="{title: 'submit'}" x-text="title"></button> -->
+    <!-- <button
+      x-data="{title:'click'}"
+      @click="alert('clicked data lest alpine')"
+      x-text="title"
+    >
+      Clicked me
+    </button> -->
+    <!-- data less alpine  -->
+    <!-- 
+    <button x-data @click="alert('clicked data lest alpine')">
+      Clicked me
+    </button> -->
+  </body>
+</html>
