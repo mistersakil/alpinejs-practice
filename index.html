@@ -11,6 +11,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <style>
+      .green {
+        background-color: green;
+      }
+      .red {
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
     <h1>Alpine js practice</h1>
@@ -22,13 +31,27 @@
       <button @mouseEnter="show=true" @mouseLeave="show=false">Toggle</button>
       <p x-html="title" x-show="show" x-transition></p>
     </div> -->
-    <div
+    <!-- <div
       x-data="{title:'toggle using  <em>alpine</em>',show: false, toggle(){
         this.show = !this.show
     }}"
     >
       <button @click="toggle">Toggle</button>
       <h2 x-html="title" x-show="show"></h2>
-    </div>
+    </div> -->
+
+    <!-- <div
+      x-data="{title:'toggle using  <em>alpine</em>',show: false, toggle(){
+      this.show = !this.show
+  }}"
+    >
+      <button @click="toggle" :class="show ? 'green' : 'red'">Toggle</button>
+      <h2
+        x-html="title"
+        x-show="show"
+        :class="show ? 'green' : 'red'"
+        x-transition
+      ></h2>
+    </div> -->
   </body>
 </html>
