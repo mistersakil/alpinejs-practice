@@ -46,12 +46,18 @@
     </div> -->
     <!-- binding attributes  -->
 
-    <button
+    <!-- <button
       x-data="{has_background:false}"
       x-bind:class="has_background ? 'red' : 'green'"
       @click="has_background = !has_background"
     >
       binging attributes
-    </button>
+    </button> -->
+    <!-- <div
+      x-data="{heading: 'click the div to change the background-color', btnTitle: 'click to change', changeBg:false}"
+    >
+      <button @click="changeBg = !changeBg" x-text="btnTitle"></button>
+      <h2 x-text="heading" :class="changeBg ? 'red' : 'green'"></h2>
+    </div> -->
   </body>
 </html>
