@@ -20,9 +20,15 @@
 
     <!-- $persist  -->
 
-    <div x-data="{btnTitle:'increment', counter: $persist(0)}">
+    <!-- <div x-data="{btnTitle:'increment', counter: $persist(0)}">
       <button x-text="btnTitle" x-on:click="counter = counter + 1"></button>
       <span x-text="counter"></span>
-    </div>
+    </div> -->
+    <!-- Setting a custom key when persist  -->
+
+    <!-- <div x-data="{counter : $persist(0).as('counter-2')}">
+      <button @click="counter++">increment</button>
+      <span x-text="counter"></span>
+    </div> -->
   </body>
 </html>
