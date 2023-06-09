@@ -16,8 +16,21 @@
     <h1>Alpine events</h1>
     <!-- dispatching custom events  -->
 
-    <div @test="alert('dispatching custom events')">
+    <!-- <div @test="alert('dispatching custom events')">
       <button @click="$dispatch('test')">dispatch custom event</button>
+    </div> -->
+
+    <!-- Listening for events on window -->
+
+    <div x-data>
+      <button @click="$dispatch('test-event')">dispatch window event</button>
     </div>
+    <div x-data @test-event.window="alert('dispatching window event')"></div>
+
+    <div x-data>
+      <button @click="$dispatch('foo')">click</button>
+    </div>
+
+    <div x-data @foo.window="console.log('foo was dispatched')">...</div>
   </body>
 </html>
