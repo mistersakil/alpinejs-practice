@@ -11,6 +11,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <style>
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
+      }
+    </style>
   </head>
   <body>
     <h1>Alpine Templating</h1>
@@ -36,5 +44,14 @@
       <button x-text="btnTitle" @click="show = !show"></button>
       <h2 x-text="content" x-show="show" x-transition.duration.500ms></h2>
     </div> -->
+    <!-- binding attributes  -->
+
+    <button
+      x-data="{has_background:false}"
+      x-bind:class="has_background ? 'red' : 'green'"
+      @click="has_background = !has_background"
+    >
+      binging attributes
+    </button>
   </body>
 </html>
