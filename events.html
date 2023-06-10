@@ -21,7 +21,7 @@
     </div> -->
 
     <!-- Listening for events on window -->
-
+    <!-- 
     <div x-data>
       <button @click="$dispatch('test-event')">dispatch window event</button>
     </div>
@@ -31,6 +31,18 @@
       <button @click="$dispatch('foo')">click</button>
     </div>
 
-    <div x-data @foo.window="console.log('foo was dispatched')">...</div>
+    <div x-data @foo.window="console.log('foo was dispatched')">...</div> -->
+
+    <!-- .prevent  -->
+    <!-- 
+    <form action="" @submit.prevent="alert('submitted')">
+      <input type="submit" value="submit" />
+    </form> -->
+
+    <!-- .stop  -->
+
+    <!-- <div @click="alert('parent')">
+      <button @click.stop="alert('prevent')">child</button>
+    </div> -->
   </body>
 </html>
