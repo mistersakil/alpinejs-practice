@@ -44,5 +44,16 @@
     <!-- <div @click="alert('parent')">
       <button @click.stop="alert('prevent')">child</button>
     </div> -->
+
+    <!-- .outside  -->
+
+    <!-- <div
+      x-data="{show: false, toggle() {this.show = !this.show }, hide() {this.show = false}}"
+    >
+      <button @click="toggle()">Click to Toggle</button>
+      <h2 x-show="show" @click.outside="hide()" x-transition>
+        content to display
+      </h2>
+    </div> -->
   </body>
 </html>
