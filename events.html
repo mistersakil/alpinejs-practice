@@ -58,13 +58,25 @@
     <!-- .once  -->
     <!-- <div @click.once="alert('i will be listen once')">click to listen once</div> -->
     <!-- increment & decrement  -->
-
+    <!-- 
     <div
       x-data="{counter: 0, increment: function(){this.counter++}, decrement: function(){this.counter-- }}"
     >
       <button @click="increment()">increment</button> |
       <button @click="decrement()">decrement</button>
       <h3 x-text="counter"></h3>
-    </div>
+    </div> -->
+
+    <!-- x-modelable -->
+
+    <!-- <div x-data="{counter: 10}">
+      <div x-data="{term: 0}" x-model="term" x-modelable="counter">
+        <button @click="term++">increment</button> |
+        <button @click="term--">decrement</button>
+        <h4>term : <span x-text="term"></span></h4>
+      </div>
+
+      <h3 x-text="counter"></h3>
+    </div> -->
   </body>
 </html>
