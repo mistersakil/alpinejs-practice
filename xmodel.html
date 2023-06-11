@@ -20,12 +20,18 @@
       <h2 x-text="message"></h2>
     </div> -->
     <!-- Multiple checkboxes bound to array -->
-    <div x-data="{colors:[]}">
+    <!-- <div x-data="{colors:[]}">
       <input type="checkbox" value="red" x-model="colors" />
       <input type="checkbox" value="orange" x-model="colors" />
       <input type="checkbox" value="yellow" x-model="colors" />
 
       Colors: <span x-text="colors"></span>
+    </div> -->
+    <!-- Radio inputs -->
+    <div x-data="{radio:''}">
+      <input type="radio" x-model="radio" value="female" />
+      <input type="radio" x-model="radio" value="male" />
+      Sex: <span x-text="radio"></span>
     </div>
   </body>
 </html>
