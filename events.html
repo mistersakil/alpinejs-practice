@@ -56,6 +56,15 @@
       </h2>
     </div> -->
     <!-- .once  -->
-    <div @click.once="alert('i will be listen once')">click to listen once</div>
+    <!-- <div @click.once="alert('i will be listen once')">click to listen once</div> -->
+    <!-- increment & decrement  -->
+
+    <div
+      x-data="{counter: 0, increment: function(){this.counter++}, decrement: function(){this.counter-- }}"
+    >
+      <button @click="increment()">increment</button> |
+      <button @click="decrement()">decrement</button>
+      <h3 x-text="counter"></h3>
+    </div>
   </body>
 </html>
