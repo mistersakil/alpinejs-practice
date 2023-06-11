@@ -15,9 +15,15 @@
   <body>
     <h1>Alpine x-model</h1>
 
-    <div x-data="{message: ''}">
+    <!-- <div x-data="{message: ''}">
       <input type="text" x-model="message" />
       <h2 x-text="message"></h2>
-    </div>
+    </div> -->
+    <!-- Multiple checkboxes bound to array -->
+    <input type="checkbox" value="red" x-model="colors" />
+    <input type="checkbox" value="orange" x-model="colors" />
+    <input type="checkbox" value="yellow" x-model="colors" />
+
+    Colors: <span x-text="colors"></span>
   </body>
 </html>
