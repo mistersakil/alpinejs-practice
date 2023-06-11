@@ -20,10 +20,12 @@
       <h2 x-text="message"></h2>
     </div> -->
     <!-- Multiple checkboxes bound to array -->
-    <input type="checkbox" value="red" x-model="colors" />
-    <input type="checkbox" value="orange" x-model="colors" />
-    <input type="checkbox" value="yellow" x-model="colors" />
+    <div x-data="{colors:[]}">
+      <input type="checkbox" value="red" x-model="colors" />
+      <input type="checkbox" value="orange" x-model="colors" />
+      <input type="checkbox" value="yellow" x-model="colors" />
 
-    Colors: <span x-text="colors"></span>
+      Colors: <span x-text="colors"></span>
+    </div>
   </body>
 </html>
