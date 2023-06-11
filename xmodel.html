@@ -52,6 +52,18 @@
 
     <!-- Dynamically populated Select Options -->
 
-    <div></div>
+    <div
+      x-data="{skill : 'laravel', list : ['php','laravel','python','javascript','typescript']}"
+    >
+      <select name="skill" id="skill" x-model="skill">
+        <template x-for="item in list">
+          <option x-text="item"></option>
+        </template>
+      </select>
+      <h1>
+        skill:
+        <span x-text="skill"></span>
+      </h1>
+    </div>
   </body>
 </html>
