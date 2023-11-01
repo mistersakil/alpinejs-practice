@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine js</title>
+    <!-- Alpine Plugins -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js"
+      defer
+    ></script>
+
+    <style>
+      .dark {
+        background-color: black;
+      }
+      .dark h1 {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body
+    x-data="{is_dark : localStorage.getItem('is_dark_theme') === 'true', change_to_is_dark(){
+    this.is_dark = !this.is_dark}}"
+    x-init="$watch('is_dark', is_dark_set => localStorage.setItem('is_dark_theme', is_dark_set))"
+    :class="is_dark ? 'dark' : ''"
+  >
+    <h1>Alpine State</h1>
+    <button @click="change_to_is_dark()">dark</button>
+  </body>
+
+  <!-- x-init="$watch('is_dark', is_dark_set => localStorage.setItem('is_dark_theme', is_dark_set))" -->
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine bind</title>
+    <!-- Alpine Plugins -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js"
+      defer
+    ></script>
+
+    <style>
+      .lightblue {
+        background-color: lightblue;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Alpine Bind</h1>
+    <hr />
+    <h4>x-bind</h4>
+
+    <div x-data="{placeholderText: 'your name please'}">
+      <input type="text" x-bind:placeholder="placeholderText" />
+      <!-- shorthand  -->
+      <input type="text" :placeholder="placeholderText + ' shorthand'" />
+    </div>
+
+    <h4>binding classes</h4>
+
+    <div x-data="{open:true}">
+      <button @click="open = !open">toggle</button>
+      <div :class="open ? 'show' : 'hidden'">dropdown content</div>
+      <div :class="open || 'hidden'">
+        dropdown content, short circuit evaluation
+      </div>
+    </div>
+
+    <div x-data="{clicked: false}">
+      <button :class="{clicked: 'lightblue'}" @click="clicked = !clicked">
+        click me
+      </button>
+      <button :class="{clicked: 'orange'}" @click="clicked = !clicked">
+        click me
+      </button>
+    </div>
+  </body>
+</html>
