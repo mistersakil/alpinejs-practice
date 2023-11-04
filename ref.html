@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine ref</title>
+    <!-- Alpine Plugins -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <h1>Alpine x-ref</h1>
+
+    <div x-data="{message: 'this is ref text'}">
+      <button @click="$refs.removeText.remove()">
+        remove text element using ref
+      </button>
+      <p x-ref="removeText" x-text="message"></p>
+    </div>
+
+    <!-- <button @click="$refs.text.remove()">Remove Text</button> -->
+
+    <!-- <span x-ref="text">Hello 👋</span> -->
+  </body>
+</html>
