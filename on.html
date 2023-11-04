@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine on</title>
+    <!-- Alpine Plugins -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <h1>Alpine On</h1>
+    <button x-data x-on:click="alert('click event')">click me</button>
+    <button x-data @click="alert('click event two')">Click me two</button>
+
+    <!-- The event object -->
+    <h4>The event object</h4>
+    <button
+      x-data
+      @click="alert($event.target.getAttribute('message'))"
+      message="accessing js native event object"
+    >
+      click me three
+    </button>
+  </body>
+</html>
