@@ -47,10 +47,14 @@
 
     <h4>class object syntax</h4>
     <div x-data="{clicked: false}">
-      <button :class="{clicked: 'lightblue'}" @click="clicked = !clicked">
+      <button
+        :class="{'lightblue' : clicked}"
+        @mouseEnter="clicked = !clicked"
+        @mouseLeave="clicked = !clicked"
+      >
         click me
       </button>
-      <button :class="{clicked: 'orange'}" @click="clicked = !clicked">
+      <button :class="{'orange' : clicked}" @click="clicked = !clicked">
         click me
       </button>
     </div>
