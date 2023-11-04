@@ -14,5 +14,9 @@
   </head>
   <body>
     <h1>Alpine x-effect</h1>
+
+    <div x-data="{message:'initial'}" x-effect="console.log(message)">
+      <button @click="message += ' updated'" x-text="message"></button>
+    </div>
   </body>
 </html>
