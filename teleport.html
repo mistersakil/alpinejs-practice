@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine teleport</title>
+    <!-- Alpine Plugins -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <h1>Alpine x-teleport</h1>
+
+    <h4>
+      <em><u>nested modal</u></em>
+    </h4>
+    <div x-data="{show: false}">
+      <button @click="show = true">click to open modal</button>
+      <template x-teleport="body">
+        <main x-show="show">
+          <h5>parent modal header</h5>
+          <p>parent modal body</p>
+          <h6>parent modal footer</h6>
+          <button @click="show=false">parent close modal</button>
+        <hr>
+          <div x-data="{show:false}">
+            <button @click="show=true">open child modal</button>
+            <template x-teleport="body">
+                <main x-show="show">
+                    <h5>child modal content</h5>
+                    <button @click="show=false">child modal close</button>
+                </main>
+            </template>
+          </div>
+
+        </main>
+      </template>
+    </div>
+    <h6>this is the last element of body</h6>
+
+    <!-- <div x-data="{open: false, toggle(){this.open = !this.open}}">
+      <button @click="toggle">click to open modal window</button>
+      <template x-teleport="body">
+        <p x-show="open" x-transition>modal window</p>
+      </template>
+    </div>
+    <hr />
+    <div x-data="{open: false, toggle(){this.open = !this.open}}">
+      <button @click="toggle">click to open modal window</button>
+      <template x-teleport="body" @click="open = false">
+        <p x-show="open" x-transition>modal window</p>
+      </template>
+    </div>  -->
+    <!-- <h5>this is last element of body</h5>
+  </body>
+</html>
