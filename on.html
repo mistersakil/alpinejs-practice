@@ -26,5 +26,20 @@
     >
       click me three
     </button>
+    <!-- In addition, Alpine also passes the event object to any methods referenced without trailing parenthesis. -->
+
+    <button
+      x-data
+      @click="handleClick"
+      message="passed event object to js method without trailing parenthesis"
+    >
+      click me four
+    </button>
+
+    <script>
+      function handleClick(event) {
+        alert(event.target.getAttribute("message"));
+      }
+    </script>
   </body>
 </html>
