@@ -36,6 +36,41 @@
       click me four
     </button>
 
+    <!-- Custom events -->
+    <h4>Custom events</h4>
+
+    <div x-data @customevent="alert('custom event alert')">
+      <button
+        @click="$event.target.dispatchEvent(new CustomEvent('customevent',{ bubbles: true }))"
+      >
+        click to check custom event
+      </button>
+    </div>
+
+    <!-- Alpine offers a $dispatch helper to simplify things -->
+
+    <div x-data @event2="alert('custom event alert')">
+      <button @click="$dispatch(event2)">click to check custom event</button>
+    </div>
+
+    <!-- .outside  -->
+
+    <h4>outside modifiers</h4>
+
+    <div
+      x-data="{show: true, showMe(){this.show = true}, hideMe(){this.show = false}}"
+    >
+      <button @click="showMe">click to show</button>
+      <p x-show="show" @click.outside="hideMe">dropdown</p>
+    </div>
+    <!-- .self modifiers -->
+    <h4>self modifiers</h4>
+
+    <div x-data @click.self="alert('only self')">
+      hello self
+      <button>outside self</button>
+    </div>
+
     <script>
       function handleClick(event) {
         alert(event.target.getAttribute("message"));
