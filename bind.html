@@ -45,6 +45,7 @@
       </div>
     </div>
 
+    <!-- class object syntax -->
     <h4>class object syntax</h4>
     <div x-data="{clicked: false}">
       <button
@@ -58,5 +59,16 @@
         click me
       </button>
     </div>
+
+    <!-- Binding styles -->
+    <h4>Binding styles</h4>
+
+    <p x-data x-bind:style="{color:'white', background:'green'}">some text</p>
+    <p
+      x-data="{style: {color:'white', background:'green'}}"
+      x-bind:style="style"
+    >
+      js expression as a reference
+    </p>
   </body>
 </html>
