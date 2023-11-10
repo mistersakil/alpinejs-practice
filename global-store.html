@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine global store</title>
+    <!-- Alpine Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js" defer></script>
+</head>
+
+<body>
+    <h1>Alpine global store</h1>
+    
+    
+
+
+    <script>
+
+      document.addEventListener('alpine:init',() => {
+        Alpine.store('darkMode' , {
+          on: false, 
+          toggle(){
+            this.on = !this.on 
+          }
+        });
+      })
+   
+    </script>
+</body>
+
+</html>

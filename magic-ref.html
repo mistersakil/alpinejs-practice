@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>alpine js</title>
+    <title>alpine magic $ref</title>
     <!-- Alpine Plugins -->
 
     <script
@@ -13,7 +13,12 @@
     ></script>
   </head>
   <body>
-    <h1>Alpine x-data</h1>
-    
+    <h1>Alpine magic $ref</h1>
+    <!-- $el is a magic property that can be used to retrieve the current DOM node -->
+    <div x-data>
+      <button @click="$el.innerHTML = 'changed'">
+        this button text can be change by magic $el element
+      </button>
+    </div>
   </body>
 </html>
