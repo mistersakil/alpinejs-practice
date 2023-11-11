@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alpine global data</title>
+    <!-- Alpine Plugins -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.2/cdn.min.js"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <h1>Alpine global data</h1>
+    <!-- Alpine.data -->
+    <h4>display nav item on button click using Alpine.data</h4>
+    <div x-data="dropdown">
+      <button @click="toggle">toggle list</button>
+      <ul x-show="isOpen">
+        <li>nav item 1</li>
+        <li>nav item 2</li>
+        <li>nav item 3</li>
+        <li>nav item 4</li>
+        <li>nav item 5</li>
+      </ul>
+    </div>
+
+    <!-- Encapsulating directives with x-bind -->
+    <h4>Encapsulating directives with x-bind</h4>
+
+    <div x-data="dropdown2">
+      <button x-bind="toggle">toggle list 2</button>
+      <ul x-bind="isShow">
+        <li>nav item 1</li>
+        <li>nav item 2</li>
+        <li>nav item 3</li>
+        <li>nav item 4</li>
+        <li>nav item 5</li>
+      </ul>
+    </div>
+
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("dropdown2", () => ({
+          isOpen: false,
+          toggle: {
+            ["@click"]() {
+              this.isOpen = !this.isOpen;
+            },
+          },
+          isShow: {
+            ["x-show"]() {
+              return this.isOpen;
+            },
+          },
+        }));
+
+        Alpine.data("dropdown", () => ({
+          isOpen: false,
+          toggle() {
+            this.isOpen = !this.isOpen;
+          },
+        }));
+      });
+    </script>
+  </body>
+</html>
